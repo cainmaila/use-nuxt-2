@@ -11,3 +11,29 @@ npm i -g npx
 ```bash
 yarn create nuxt-app <my-project>
 ```
+
+服務啟動
+```bash
+yarn dev
+```
+
+修改'port'加入環境變數
+```
+HOST=0.0.0.0 PORT=80
+```
+
+cssnext使用設定
+
+nuxt2已內建`postcss-preset-env`，請再`nuxt.config.js`加上
+```js
+ build: {
+        postcss: {
+            preset: {
+                /* use stage 3 features + css nesting rules */
+                stage: 3,
+                features: {
+                    'nesting-rules': true
+                }
+            }
+        },
+```

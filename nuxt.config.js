@@ -55,6 +55,15 @@ module.exports = {
   ** Build configuration
   */
     build: {
+        postcss: {
+            preset: {
+                /* use stage 3 features + css nesting rules */
+                stage: 3,
+                features: {
+                    'nesting-rules': true
+                }
+            }
+        },
         /*
     ** You can extend webpack config here
     */

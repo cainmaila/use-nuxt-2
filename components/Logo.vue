@@ -4,10 +4,19 @@
     <div class="Triangle Triangle--one" />
     <div class="Triangle Triangle--three" />
     <div class="Triangle Triangle--four" />
+    <div class="tt aa">XXX</div>
   </div>
 </template>
 
-<style>
+<style lang="postcss">
+:root {
+    --mainColor: #f00;
+}
+.tt {
+    color: var(--mainColor);
+    display: flex;
+}
+
 .VueToNuxtLogo {
     display: inline-block;
     animation: turn 2s linear forwards 1s;
