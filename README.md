@@ -1,6 +1,6 @@
 # How to use nuxt 2
 
-安裝`npx`
+安裝`npx`工具
 https://www.npmjs.com/package/npx
 
 ```bash
