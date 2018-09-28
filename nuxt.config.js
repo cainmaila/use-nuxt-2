@@ -61,7 +61,8 @@ module.exports = {
                 stage: 3,
                 features: {
                     'nesting-rules': true
-                }
+                },
+                autoprefixer: { grid: true }
             }
         },
         /*

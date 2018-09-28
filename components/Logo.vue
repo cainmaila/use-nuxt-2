@@ -8,13 +8,16 @@
   </div>
 </template>
 
-<style lang="postcss">
+<style scoped>
 :root {
     --mainColor: #f00;
 }
 .tt {
     color: var(--mainColor);
     display: flex;
+    &:hover {
+        color: #00f;
+    }
 }
 
 .VueToNuxtLogo {
