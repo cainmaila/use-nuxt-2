@@ -4,7 +4,7 @@
     <div class="Triangle Triangle--one" />
     <div class="Triangle Triangle--three" />
     <div class="Triangle Triangle--four" />
-    <div class="tt aa">XXX</div>
+    <div class="tt aa">{{ $t('welcome') }}</div>
   </div>
 </template>
 

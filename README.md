@@ -37,3 +37,32 @@ nuxt2已內建`postcss-preset-env`，請再`nuxt.config.js`加上
             }
         },
 ```
+
+多語系統
+
+安裝 `nuxt-i18`模組
+
+```js
+modules: [
+        [
+            'nuxt-i18n',
+            {
+                locales: [
+                    {
+                        code: 'en',
+                        iso: 'en-US',
+                        file: 'en.json'
+                    },
+                    {
+                        code: 'zh',
+                        iso: 'zh-TW',
+                        file: 'zh.json'
+                    }
+                ],
+                defaultLocale: 'zh',
+                lazy: true,
+                langDir: 'lang/'
+            }
+        ]
+    ],
+```
