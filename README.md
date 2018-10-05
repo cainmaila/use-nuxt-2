@@ -41,71 +41,9 @@ nuxt2已內建`postcss-preset-env`，請再`nuxt.config.js`加上
 由於使用 lang="postcss" webpack會報錯，因為nuxt2沒有設定postcss的loader(他直接使用css)<br>
 為了在vs-code更方便使用，所以自己加了postcss的解析
 
-nuxt.config.js
+nuxt.config.js 的 build.extend 中添加了
 ```js
-{
-const pkg = require('./package')
-
-module.exports = {
-  mode: 'universal',
-
-  /*
-  ** Headers of the page
-  */
-  head: {
-    title: 'Dali City 智慧园区',
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-  },
-
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
-
-  /*
-  ** Global CSS
-  */
-  css: [],
-
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [],
-
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    [
-      'nuxt-i18n',
-      {
-        locales: [
-          {
-            code: 'zh',
-            iso: 'zh-CN',
-            file: 'zh.json'
-          }
-        ],
-        defaultLocale: 'zh',
-        lazy: true,
-        langDir: 'lang/'
-      }
-    ]
-  ],
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-
-  /*
-  ** Build configuration
-  */
-  build: {
-    extend(config, ctx) {
+extend(config, ctx) {
       config.module.rules.push({
         test: /\.(postcss)$/,
         use: [
@@ -116,10 +54,23 @@ module.exports = {
           }
         ]
       })
-    }
+```
+
+另外新增 postcss.config.js
+```js
+module.exports = function() {
+  return {
+    plugins: [
+      require('postcss-preset-env')({
+        stage: 3,
+        features: {
+          'nesting-rules': true
+        }
+      })
+    ]
   }
 }
-}
+
 ```
 
 
