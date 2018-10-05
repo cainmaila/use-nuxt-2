@@ -62,6 +62,7 @@ extend(config, ctx) {
 module.exports = function() {
   return {
     plugins: [
+      require('postcss-custom-media'),
       require('postcss-preset-env')({
         stage: 3,
         features: {
@@ -71,7 +72,6 @@ module.exports = function() {
     ]
   }
 }
-
 ```
 
 
