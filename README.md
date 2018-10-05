@@ -54,6 +54,7 @@ extend(config, ctx) {
           }
         ]
       })
+ }
 ```
 
 另外新增 postcss.config.js
