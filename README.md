@@ -66,3 +66,17 @@ modules: [
         ]
     ],
 ```
+
+使用pwa
+
+```bash
+yarn add @nuxtjs/pwa
+```
+
+nuxt.config.js
+```js
+{
+    modules: [
+        '@nuxtjs/pwa',
+    ],
+}
