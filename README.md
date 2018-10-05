@@ -57,12 +57,18 @@ extend(config, ctx) {
  }
 ```
 
+安裝 postcss apply套件
+```bash
+yarn add postcss-apply --dev
+```
+
 另外新增 postcss.config.js
 ```js
 module.exports = function() {
   return {
     plugins: [
       require('postcss-custom-media'),
+      require('postcss-apply')(),
       require('postcss-preset-env')({
         stage: 3,
         features: {
