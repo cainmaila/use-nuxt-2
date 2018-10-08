@@ -67,6 +67,9 @@ yarn add postcss-apply --dev
 module.exports = function() {
   return {
     plugins: [
+      require('postcss-import')({
+        path: ['./assets/css']
+      }),
       require('postcss-custom-media'),
       require('postcss-apply')(),
       require('postcss-preset-env')({
